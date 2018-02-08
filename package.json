@@ -1,16 +1,16 @@
 {
-  "name": "react-boilerplate",
-  "version": "3.5.0",
-  "description": "A highly scalable, offline-first foundation with the best DX and a focus on performance and best practices",
+  "name": "youda-quotes",
+  "version": "1.0.0",
+  "description": "Youda said ...",
   "repository": {
     "type": "git",
-    "url": "git://github.com/react-boilerplate/react-boilerplate.git"
+    "url": "https://github.com/VladMorzhanov/yoda-quotes"
   },
   "engines": {
     "npm": ">=3",
     "node": ">=5"
   },
-  "author": "Max Stoiber",
+  "author": "Vlad Morzhanov",
   "license": "MIT",
   "scripts": {
     "analyze:clean": "rimraf stats.json",
@@ -129,8 +129,6 @@
     "async": "^2.1.4",
     "axios": "^0.16.2",
     "babel-polyfill": "6.23.0",
-    "bcrypt": "^1.0.2",
-    "bcrypt-nodejs": "0.0.3",
     "bluebird": "^3.4.7",
     "body-parser": "~1.15.2",
     "chalk": "^1.1.3",
@@ -139,7 +137,6 @@
     "core-js": "^2.4.1",
     "cors": "^2.8.1",
     "cross-env": "^5.1.3",
-    "debug": "~2.2.0",
     "express": "4.15.3",
     "history": "4.6.3",
     "hoist-non-react-statics": "2.1.1",
@@ -147,11 +144,9 @@
     "intl": "1.2.5",
     "invariant": "2.2.2",
     "ip": "1.1.5",
-    "jsonwebtoken": "^5.7.0",
     "lodash": "4.17.4",
     "minimist": "1.2.0",
     "moment": "^2.18.1",
-    "mongoose": "^4.7.6",
     "prop-types": "15.5.10",
     "react": "16.2.0",
     "react-dom": "^16.2.0",
@@ -172,7 +167,6 @@
     "reselect": "3.0.1",
     "sanitize.css": "4.1.0",
     "styled-components": "2.0.0",
-    "validator": "^8.2.0",
     "warning": "3.0.0"
   },
   "devDependencies": {
