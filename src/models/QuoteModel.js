@@ -7,9 +7,9 @@ export default class QuoteModel {
     @observable source;
 
     constructor(quote, yodaQuote, author, source) {
-        this.quote = quote;
-        this.yodaQuote = yodaQuote;
-        this.author = author;
-        this.source = source;
+        this.quote = quote || '';
+        this.yodaQuote = yodaQuote || '';
+        this.author = author || '';
+        this.source = source || '';
     }
 }

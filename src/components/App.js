@@ -1,5 +1,11 @@
 import React, {Component} from 'react';
+import AppMUITheme from '../utils/AppMUITheme'
+import {action, inject, observer, Provider} from 'mobx-react'
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider'
+import getMuiTheme from 'material-ui/styles/getMuiTheme'
 import styled from 'styled-components'
+import {RootStore} from "../stores/RootStore";
+import {YODA_LOGO_URL} from "../constants";
 
 const AppWrapper = styled.div`
     width: 100%;
@@ -14,25 +20,34 @@ const AppWrapper = styled.div`
     }
 `
 
-class App extends Component {
-    constructor() {
-        super()
-        this.state = {
-            inputValue: ''
-        }
-        this.onChange = this.onChange.bind(this)
-    }
+const QuoteWrapper = styled.div`
+  p{
+    font-size: 18px;
+  }
+`
 
-    onChange(e) {
-        this.setState({inputValue: e.currentTarget.value})
+@inject('rootStore')
+@observer
+class App extends Component {
+    constructor(props) {
+        super(props)
     }
 
     render() {
+        const {store} = this.props.rootStore
         return (
-            <AppWrapper className="App">
-                <input onChange={this.onChange}/>
-                <p>Value: {this.state.inputValue}</p>
-            </AppWrapper>
+            <Provider rootStore={RootStore}>
+                <MuiThemeProvider muiTheme={getMuiTheme(AppMUITheme())}>
+                    <AppWrapper className="App">
+                        <h1>Yoda Quote</h1>
+                        <img src={YODA_LOGO_URL} alt="Yoda"/>
+                        <QuoteWrapper>
+                            <p>{store.currentQuote.quote}</p>
+                        </QuoteWrapper>
+                        <button onClick={() => store.fetchQuote()}>Get New Quote</button>
+                    </AppWrapper>
+                </MuiThemeProvider>
+            </Provider>
         );
     }
 }
