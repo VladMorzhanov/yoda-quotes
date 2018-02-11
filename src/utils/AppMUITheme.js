@@ -5,9 +5,9 @@ import {fade} from 'material-ui/utils/colorManipulator'
 
 export default () => {
     const palette = {
-        primary1Color: '#3886d1',
-        accent1Color: '#0258a0',
-        textColor: '#757575',
+        primary1Color: '#3ada55',
+        accent1Color: '#299a3c',
+        textColor: '#ffffff',
     }
     return {
         spacing,

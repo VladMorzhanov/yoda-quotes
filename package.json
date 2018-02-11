@@ -1,10 +1,10 @@
 {
-  "name": "yoda-quotes",
-  "version": "1.0.0",
-  "private": false,
+  "name": "my-app",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "axios": "^0.16.2",
-    "custom-react-scripts": "0.2.0",
+    "custom-react-scripts": "^0.2.1",
     "express": "4.15.3",
     "material-ui": "^0.19.3",
     "material-ui-pagination": "^1.1.6",
@@ -13,15 +13,10 @@
     "mobx-react": "^4.3.3",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-scripts": "1.1.0",
     "styled-components": "2.0.0"
   },
-  "devDependencies": {
-    "prop-types": "^15.6.0"
-  },
   "scripts": {
-    "dev": "react-scripts start",
-    "start": "node ./server/",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
