@@ -28,6 +28,8 @@ export class RootStore {
 
     @action.bound
     async fetchQuote(withYoda) {
+        this.setQuote(new QuoteModel())
+
         try {
             const {data} = await API.getQuote()
 
@@ -35,10 +37,15 @@ export class RootStore {
                 data.quote = data.quote.substr(0, 80) + '...'
             }
 
-            if (withYoda) {
-                const res = await RootStore.translateToYoda(data.quote)
-                data.yodaQuote = res.data
-                console.log(res.data);
+            try {
+                if (withYoda) {
+                    const res = await RootStore.translateToYoda(data.quote)
+                    data.yodaQuote = res.data
+                    console.log(res.data);
+                }
+            } catch (e) {
+                console.log(e);
+                data.yodaQuote = 'Unfortunately  Yoda is out 👀'
             }
 
             this.setQuote(data)

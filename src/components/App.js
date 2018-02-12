@@ -4,9 +4,11 @@ import styled from 'styled-components'
 import FlatButton from 'material-ui/FlatButton'
 import Paper from 'material-ui/Paper'
 import {YODA_LOGO_URL} from "../constants";
+import AnimatedDots from "./AnimatedDots";
 
 const AppWrapper = styled.div`
     width: 100%;
+    background-color:rgba(206,255,198,0.4);
     height: 100%;
     display: flex;
     justify-content: center;
@@ -16,6 +18,8 @@ const AppWrapper = styled.div`
 
 const Title = styled.h1`
   margin-top: -20px;
+  margin-left: 40px;
+  color:#0A6E00;
   font-family: Helvetica, sans-serif;
   font-size: 32px;
 `
@@ -28,7 +32,7 @@ const QuoteWrapper = styled.div`
     margin: 0;  
     font-family: Helvetica, sans-serif;
     font-size: 18px;
-    color: #000;
+    color: #2c2c2c;
     span{
       color: #0a6e00;
     }
@@ -37,6 +41,7 @@ const QuoteWrapper = styled.div`
 
 const paperStyle = {
     display: 'flex',
+    backgroundColor: '#d0ffb1',
     alignItems: 'center',
     justifyContent: 'center',
     width: '700px',
@@ -47,7 +52,7 @@ const paperStyle = {
 }
 
 const buttonStyle = {
-    background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+    background: 'linear-gradient(45deg, #299A3C 30%, #299A3C 90%)',
     borderRadius: 3,
     border: 0,
     fontWeight: 'bold',
@@ -55,13 +60,20 @@ const buttonStyle = {
     height: 48,
     fontFamily: 'Helvetica, sans-serif',
     padding: '0 30px',
-    boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .30)',
+    boxShadow: '0 3px 5px 2px rgba(10,110,0,0.3)',
 };
 
 const Waiting = styled.h1`
-  color: #000000;
-  text-align: center;
-  font-size: 24px;
+  color: #0A6E00;
+  height: 40px;
+  line-height: 40px;
+  text-align: left;
+  min-width: 250px;
+  font-size: 32px;
+  i{
+    font-size: 32px;
+    font-style: normal !important;
+  }
 `
 
 @inject('rootStore')
@@ -99,7 +111,9 @@ class App extends Component {
                 <Paper style={paperStyle}>
                     {rootStore.currentQuote.quote.length > 0 ?
                         this.renderQuotes() :
-                        <Waiting>Waiting for wisdom...</Waiting>
+                        <Waiting>
+                            <AnimatedDots/>
+                        </Waiting>
                     }
                 </Paper>
                 <FlatButton
