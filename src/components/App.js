@@ -5,10 +5,11 @@ import FlatButton from 'material-ui/FlatButton'
 import Paper from 'material-ui/Paper'
 import {YODA_LOGO_URL} from "../constants";
 import AnimatedDots from "./AnimatedDots";
+import YodaImage from '../assets/yoda.png'
 
 const AppWrapper = styled.div`
     width: 100%;
-    background-color:rgba(206,255,198,0.4);
+    background-color:rgba(206,255,198,0.24);
     height: 100%;
     display: flex;
     justify-content: center;
@@ -26,8 +27,9 @@ const Title = styled.h1`
 
 const QuoteWrapper = styled.div`
   p{
-    padding: 10px;
-    padding-bottom: 12px;
+    padding: 6px;
+    text-align: justify;
+    line-height: 28px;
     max-width: 700px;
     margin: 0;  
     font-family: Helvetica, sans-serif;
@@ -46,7 +48,7 @@ const paperStyle = {
     justifyContent: 'center',
     width: '700px',
     padding: '10px',
-    minHeight: '160px',
+    minHeight: '180px',
     marginTop: '30px',
     marginBottom: '40px'
 }
@@ -107,7 +109,7 @@ class App extends Component {
         return (
             <AppWrapper className="App">
                 <Title>Yoda Quotes</Title>
-                <img src={YODA_LOGO_URL} alt="Yoda"/>
+                <img src={YodaImage} alt="Yoda"/>
                 <Paper style={paperStyle}>
                     {rootStore.currentQuote.quote.length > 0 ?
                         this.renderQuotes() :
