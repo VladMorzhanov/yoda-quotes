@@ -1,6 +1,6 @@
 # Yoda Quotes
 
-<img src="https://i.imgur.com/JQeS9rm.png"/>
+<img src="https://i.imgur.com/GSFiDrk.png"/>
 
 Yoda Quotes - fun application that provides 'Yoda-styled' famous quotes. ⚡️🧙‍⚡️
 
